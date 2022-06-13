@@ -8,8 +8,8 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "d:/Old files/Julia's Printer/Extruder/include",
-                "d:/Old files/Julia's Printer/Extruder/src",
+                "d:/Old files/Julia's Printer/Extruder/3DfoodPrinterExtruder/include",
+                "d:/Old files/Julia's Printer/Extruder/3DfoodPrinterExtruder/src",
                 "C:/Users/Squatch Walts/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "C:/Users/Squatch Walts/.platformio/packages/framework-arduino-avr/variants/standard",
                 "C:/Users/Squatch Walts/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
@@ -22,8 +22,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "d:/Old files/Julia's Printer/Extruder/include",
-                    "d:/Old files/Julia's Printer/Extruder/src",
+                    "d:/Old files/Julia's Printer/Extruder/3DfoodPrinterExtruder/include",
+                    "d:/Old files/Julia's Printer/Extruder/3DfoodPrinterExtruder/src",
                     "C:/Users/Squatch Walts/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "C:/Users/Squatch Walts/.platformio/packages/framework-arduino-avr/variants/standard",
                     "C:/Users/Squatch Walts/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",

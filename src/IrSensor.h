@@ -6,5 +6,5 @@ class IrSensor {       // The class
 
     IrSensor(void);
     void Init(void);
-    void CalcDistance(void);
+    float CalcDistance(void);
 };

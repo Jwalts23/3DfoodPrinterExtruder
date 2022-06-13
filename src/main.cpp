@@ -8,13 +8,23 @@
     Retract,
     Stop,
   };
-  State state;
+  State state = Start;
+  float d;
+  int i = 0;
+
+  IrSensor irSensor;
 
 void cycleOnce(){
   switch(state){
     case Start:
     {
-
+      d = irSensor.CalcDistance();
+      if (i>100){
+        Serial.println(d);
+        i=0;
+      }
+      i++;
+      
     }
 
     case Extrude:
@@ -41,7 +51,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println("hello");
+  // Serial.println("hello");
   cycleOnce();
 }
 
