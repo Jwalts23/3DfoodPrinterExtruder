@@ -28,6 +28,11 @@ void cycleOnce(){
   switch(state){
     case Start:
     { 
+      if (j>=200){
+        
+      }
+
+      else{
       ana = analogRead(A0);
       V = 5.0/1023.0 * (float) ana; 
       Serial.print(ana);
@@ -40,9 +45,8 @@ void cycleOnce(){
       // avg = filter.avg(d, count);
       // runAvg = filter.movingAvg(d, count);
       // Serial.println(roundToHun(runAvg));
-      if (j>=200){
-        delay(10000);
       }
+
        
 
       
