@@ -1,5 +1,7 @@
 #include <Arduino.h>
 #include <IrSensor.h>
+#include <Filters.h>
+#include <math.h>
 
 //Define states of movement for State Machine
   enum State{
@@ -10,20 +12,39 @@
   };
   State state = Start;
   float d;
-  int i = 0;
+
 
   IrSensor irSensor;
+  Filters filter;
+  float avg;
+  float runAvg;
+  int count = 6;
+  int j = 0;
+  int ana;
+  float V;
+
 
 void cycleOnce(){
   switch(state){
     case Start:
-    {
-      d = irSensor.CalcDistance();
-      if (i>100){
-        Serial.println(d);
-        i=0;
+    { 
+      ana = analogRead(A0);
+      V = 5.0/1023.0 * (float) ana; 
+      Serial.print(ana);
+      Serial.print("  ");
+      Serial.println(V);
+      j++;
+      delay(50);
+      // d = irSensor.CalcDistance();
+      // Serial.println(d);
+      // avg = filter.avg(d, count);
+      // runAvg = filter.movingAvg(d, count);
+      // Serial.println(roundToHun(runAvg));
+      if (j>=200){
+        delay(10000);
       }
-      i++;
+       
+
       
     }
 
@@ -44,9 +65,10 @@ void cycleOnce(){
   }
 }
 
+
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9200);
+  Serial.begin(9600);
 }
 
 void loop() {

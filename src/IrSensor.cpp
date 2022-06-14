@@ -16,7 +16,7 @@ float IrSensor::CalcDistance(){
     float ADC_result = 0.0;
     ADC_result_raw = analogRead(A0);
     ADC_result = (ADC_result_raw / 1024.0) * 5.0;
-    distance = pow((14.1 / ADC_result), (1.0 / 0.812));
+    distance = pow((11.829 / ADC_result), (1.0 / 0.775));
     // if (errorIR > 0 || errorIR < 0)
     // {
     //     effortIR = kpIR * errorIR + kdIR * (curEffortIR - prevEffortIR);
