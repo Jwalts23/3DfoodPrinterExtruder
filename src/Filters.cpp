@@ -8,15 +8,17 @@ float Filters::avg(float newVal, int measurementsToAvg){
     
     if (k <= measurementsToAvg) {
         avgDistance += newVal;
+        // Serial.println(avgDistance);
         k++;
         avg1 = -1;
     }
 
     if (k == measurementsToAvg){
+        // Serial.println(k);
         avg1 = avgDistance / (float)measurementsToAvg;
         k = 0;
         avgDistance = 0.0; 
-        // Serial.println(avg1);
+        Serial.println(avg1);
     }
     return avg1;
 }
