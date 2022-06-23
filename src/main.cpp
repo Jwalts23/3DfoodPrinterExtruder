@@ -3,6 +3,7 @@
 #include <Filters.h>
 #include <math.h>
 #include <Stepper.h>
+#include <Ultrasonic.h>
 
 //Define states of movement for State Machine
   enum State{
@@ -21,6 +22,8 @@
 
   IrSensor irSensor;
   Filters filter;
+  Ultrasonic ultra;
+
   float avg;
   float runAvg;
   int count = 5;
@@ -84,6 +87,7 @@ void setup() {
   Serial.begin(9600);
   //Set rpm for Stepper Motor
   myStepper.setSpeed(35);
+  ultra.init();
 }
 
 void loop() {
@@ -91,6 +95,7 @@ void loop() {
   // Serial.println("hello");
   // d = irSensor.CalcDistance();
   // Serial.println(d);
-  cycleOnce();
+  // cycleOnce();
+  ultra.calcDistance();
 }
 
