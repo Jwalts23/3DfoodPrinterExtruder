@@ -96,6 +96,18 @@ void loop() {
   // d = irSensor.CalcDistance();
   // Serial.println(d);
   // cycleOnce();
-  ultra.calcDistance();
+  // ultra.calcDistance();
+  Serial.println ("i start");
+  for (int i=1; i<=5; i++){
+    for(int k=1; k<=i; k++){
+      myStepper.step(-1);
+        delay(700);
+    }
+    
+    Serial.print ("i stepped ");
+    Serial.println (i);
+    delay(5000);
+  }
+  
 }
 

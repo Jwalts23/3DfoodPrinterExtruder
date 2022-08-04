@@ -9,5 +9,5 @@
     }
     
     float Microphone::CalcVolume(void){
-
+        return 0;
     }
